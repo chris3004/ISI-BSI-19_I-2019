@@ -1,0 +1,51 @@
+<html>
+ <head>
+	<meta charset="utf-8">
+	<title>Formulario de PHP</title>
+ </head>
+ 
+ <body>
+ <h4>Formulario</h4>
+ <form action="JAVASCRIPT_ejercicio_10.php" method="post">
+	<table>
+		<tr>
+			<td>Texto plano:</td>
+			<td><input type="text" name="texto"/></td>
+		</tr>
+		<tr>
+			<td>Area de texto:</td>
+			<td><textarea rows="3" name="area"></textarea></td>
+		</tr>
+		<tr>
+			<td>Campo de seleccion:</td>
+			<td><select name="seleccion">
+				   <option value="español">Español</option>
+				   <option value="ingles">Ingles</option>
+				   <option value="frances">Frances</option>
+				   <option value="aleman">Aleman</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>Campo check:</td>
+			<td><input type="checkbox" name="check" value="correo"> Recibir correos<br></td>
+		</tr>
+		<tr>
+			<td>Grupo de radiales:</td>
+			<td><input type="radio" name="radial" value="hombre"> Hombre<br>
+				<input type="radio" name="radial" value="mujer"> Mujer<br>
+			</td>
+		</tr>
+		<tr>
+			<td>Campo tipo rango:</td>
+			<td><input type="range" name="rango" min="0" max="100" step="1"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" value="Enviar">
+			</td>
+		</tr>
+	</table>
+ </form>
+
+ </body>
+</html> 

@@ -1,0 +1,43 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+
+function factorial(num){
+	var i;
+	var resultado = num;
+	if (num > 0){
+		if(num == 1){
+			alert("El factorial es 1");
+		}
+		else{
+			for (i = num-1; i > 0; i--) {
+			  resultado = resultado * i;
+			}
+			alert("El factorial es " + resultado);
+		}		
+	}
+	else{
+		alert("Para obtener el factorial, el número debe ser positivo y mayor a 0");
+	}
+}
+
+</script>
+</head>
+<body>
+ 
+<h4>Factorial</h4>
+ 
+<form method="post">
+	<table>
+		<tr>
+			<td><input type="number" min="0" id="val" name="val"/></td>
+			<td><input type="submit" onclick="return factorial(document.getElementById('val').value)" value="Calcular"></td>
+		</tr>
+	</table>
+	
+</form>
+ <div id="resultado"></div>
+ 
+</body>
+</html>

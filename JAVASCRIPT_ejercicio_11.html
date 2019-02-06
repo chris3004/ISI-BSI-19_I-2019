@@ -1,0 +1,56 @@
+<html>
+ <head>
+	<meta charset="utf-8">
+	<title>Calculadora</title>
+	<script src="../../phpMyAdmin/js/vendor/jquery/jquery.min.js"></script>
+	<script type="text/javascript">
+	function calcular_ajax(){
+		var val1 = document.getElementById("val1").value;
+		var val2 = document.getElementById("val2").value;
+		var operacion = document.getElementById("operacion").value;
+		
+		if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp=new XMLHttpRequest();
+		} else {// code for IE6, IE5
+			xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		}
+
+		xmlhttp.onreadystatechange=function() {
+			if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+				document.getElementById("resultado").innerHTML=xmlhttp.responseText;
+			}
+		}
+
+		xmlhttp.open("POST","JAVASCRIPT_ejercicio_11.php",true);
+		xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xmlhttp.send("val1="+val1+"&val2="+val2+"&operacion="+operacion);
+		
+		
+	}
+	</script>
+ </head>
+ 
+ <body>
+ <h4>Calculadora</h4>
+ <form method="post">
+	<table>
+		<tr>
+			<td><input type="text" name="val1" id="val1"/></td>
+			<td><select name="operacion" id="operacion">
+				   <option value="sumar">+</option>
+				   <option value="restar">-</option>
+				   <option value="multiplicar">*</option>
+				   <option value="dividir">/</option>
+				</select>
+			</td>
+			<td><input type="text" name="val2" id="val2"/></td>
+			<td><input type="button" value="Calcular" onclick="calcular_ajax();"></td>
+		</tr>
+	</table>
+	<div id="resultado">
+	
+	</div>
+ </form>
+
+ </body>
+</html> 

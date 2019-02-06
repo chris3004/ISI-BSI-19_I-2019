@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+	function valorarCadena(cadena){
+		if(cadena == cadena.toUpperCase()){
+			alert("La cadena contiene solo mayúsculas");
+		}
+		else{
+			if(cadena == cadena.toLowerCase()){
+				alert("La cadena contiene solo minúsculas");
+			}
+			else{
+				alert("La cadena contiene mayúsculas y minúsculas");
+			}
+		}
+		
+	}
+	</script>
+</head>
+<body>
+ 
+<h4>Valorar cadena de caracteres</h4>
+ 
+<form method="post">
+	<table>
+		<tr>
+			<td><input type="text" id="texto" name="texto"/></td>
+			<td><input type="submit" onclick="return valorarCadena(document.getElementById('texto').value)" value="Valorar"></td>
+		</tr>
+	</table>
+</form>
+
+ 
+</body>
+</html>
